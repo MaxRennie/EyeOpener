@@ -1,11 +1,13 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Text, View, imageBackground } from 'react-native';
 
 export default function App() {
   return (
     <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
+      <ImageBackground source={require('./assets/backgrounds/bg.svg')} style={styles.imageBackground}>
+
+      </ImageBackground>
+      <StatusBar hidden={true} />
     </View>
   );
 }

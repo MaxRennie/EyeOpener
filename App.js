@@ -1,14 +1,26 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View, imageBackground } from 'react-native';
+import React from 'react';
+import { StyleSheet, Text, View, imageBackground, FlatList, TouchableOpacity } from 'react-native';
+import { NavigationContainer } from '@react-navigation/native';
+import { createStackNavigator } from '@react-navigation/stack';
 
 export default function App() {
+  const Stack = createStackNavigator();
+  
   return (
-    <View style={styles.container}>
+    <NavigationContainer style={styles.container}>
       <ImageBackground source={require('./assets/backgrounds/bg.svg')} style={styles.imageBackground}>
-
+        <Stack.Navigator initialRouteName='Home'>
+          <Stack.Screen name="Home" component={HomeScreen} options={{ title: 'Choose an area of Suffolk:' }} />
+          <Stack.Screen name="Bury St Edmunds" component={BuryStEdmundsScreen} />
+          <Stack.Screen name="Felixstowe" component={FelixstoweScreen} />
+          <Stack.Screen name="Haverhill" component={HaverhillScreen} />
+          <Stack.Screen name="Ipswich" component={IpswichScreen} />
+          <Stack.Screen name="Lowestoft" component={LowestoftScreen} />
+        </Stack.Navigator>
+        <StatusBar hidden={true} />
       </ImageBackground>
-      <StatusBar hidden={true} />
-    </View>
+    </NavigationContainer >
   );
 }
 

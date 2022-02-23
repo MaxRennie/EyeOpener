@@ -14,9 +14,6 @@ export default function App() {
           <Stack.Screen name="Home" component={HomeScreen} options={{ title: 'Choose an area of Suffolk:' }} />
           <Stack.Screen name="Bury St Edmunds" component={BuryStEdmundsScreen} />
           <Stack.Screen name="Felixstowe" component={FelixstoweScreen} />
-          <Stack.Screen name="Haverhill" component={HaverhillScreen} />
-          <Stack.Screen name="Ipswich" component={IpswichScreen} />
-          <Stack.Screen name="Lowestoft" component={LowestoftScreen} />
         </Stack.Navigator>
         <StatusBar hidden={true} />
       </ImageBackground>
